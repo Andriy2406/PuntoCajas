@@ -1,0 +1,628 @@
+:root {
+    --verde-principal: #2f7a4d;
+    --verde-oscuro: #1f5936;
+    --verde-claro: #e7f4ec;
+    --blanco: #ffffff;
+    --gris-claro: #f4f6f5;
+    --gris-borde: #dde3e0;
+    --texto-principal: #24312b;
+    --texto-secundario: #5b6b63;
+    --fuente-titulos: "Poppins", sans-serif;
+    --fuente-texto: "Poppins", sans-serif;
+}
+
+/* ---------- Reseteo y Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    color: var(--texto-principal);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+}
+
+a {
+    color: var(--verde-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--verde-oscuro);
+}
+
+.col-correo {
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ---------- Barra de navegación ---------- */
+.navbar-punto {
+    background-color: var(--blanco);
+    border-bottom: 3px solid var(--verde-principal);
+}
+
+.navbar-punto .navbar-brand {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-punto .nav-link {
+    color: var(--texto-principal);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-punto .nav-link:hover,
+.navbar-punto .nav-link.active {
+    color: var(--verde-principal);
+}
+
+.logo-caja {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+/* ---------- Botones ---------- */
+.btn-punto-primario {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    color: var(--blanco);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-punto-primario:hover {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+.btn-punto-secundario {
+    background-color: transparent;
+    border: 2px solid var(--verde-principal);
+    color: var(--verde-principal);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-punto-secundario:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+}
+
+/* ---------- Hero (sección principal de inicio) ---------- */
+.hero-punto {
+    background-color: var(--verde-claro);
+    border-bottom: 1px solid var(--gris-borde);
+    padding: 64px 0;
+}
+
+.hero-punto .lema {
+    color: var(--verde-oscuro);
+    font-style: italic;
+}
+
+.franja-cajas {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.caja-decorativa {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--verde-principal);
+    border-radius: 4px;
+    opacity: 0.35;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.caja-decorativa:nth-child(2) {
+    opacity: 0.6;
+    transform: translateY(-6px);
+}
+
+.caja-decorativa:nth-child(3) {
+    opacity: 1;
+}
+
+/* ---------- Secciones de Servicios ---------- */
+.seccion-gris {
+    background-color: var(--gris-claro);
+    padding: 56px 0;
+}
+
+.tarjeta-servicio {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 24px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.tarjeta-servicio .icono-servicio {
+    color: var(--verde-principal);
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+/* ---------- Formularios (Login, Registro, etc.) ---------- */
+.contenedor-formulario {
+    max-width: 480px;
+    width: 100%;
+    margin: 56px auto;
+    padding: 32px;
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.contenedor-formulario.formulario-ancho {
+    max-width: 640px;
+}
+
+.contenedor-formulario h1 {
+    font-size: 1.6rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 4px;
+}
+
+.contenedor-formulario .subtitulo {
+    color: var(--texto-secundario);
+    margin-bottom: 24px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--texto-principal);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 0.2rem rgba(47, 122, 77, 0.25);
+}
+
+/* ---------- Pie de página ---------- */
+.footer-punto {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 24px 0;
+    margin-top: auto;
+}
+
+.footer-punto a {
+    color: var(--blanco);
+    opacity: 0.85;
+}
+
+.footer-punto a:hover {
+    opacity: 1;
+    color: var(--blanco);
+}
+/* ===== Seguimiento de pedidos (línea de tiempo) en Gestionar ventas ===== */
+.fila-seguimiento td {
+    background: #faf9fc;
+}
+
+.linea-tiempo-pedido {
+    display: block;
+}
+
+.paso-seguimiento {
+    display: inline-block;
+    background: #efe9fb;
+    color: #4b2e83;
+    border: 1px solid #d9cdf2;
+    border-radius: 999px;
+    padding: 3px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.paso-seguimiento:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -16px;
+    color: #b8a9d9;
+}
+
+/* =========================================================
+   PANEL DE ADMINISTRACIÓN (tarjetas de módulos) — robustecido
+   Estas clases las usa PanelAdmin.jsp (admin-card, admin-grid, etc.)
+   y antes no estaban definidas, por eso las tarjetas se veían planas
+   y sin estilo. Se mantienen las mismas variables de color de arriba
+   para no romper la identidad visual del sitio.
+========================================================= */
+
+.admin-page {
+    background-color: var(--gris-claro);
+}
+
+.admin-dashboard {
+    padding: 40px 0 72px;
+}
+
+.admin-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.admin-eyebrow {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--verde-principal);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.admin-title {
+    margin: 0;
+    color: var(--verde-oscuro);
+    font-size: clamp(1.8rem, 3vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.admin-description {
+    max-width: 720px;
+    margin: 8px 0 0;
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* Botón de volver, reutilizado en el panel admin y en sus subpáginas */
+.btn-volver-admin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--blanco);
+    border: 2px solid var(--verde-principal);
+    color: var(--verde-principal);
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.btn-volver-admin:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+    transform: translateX(-2px);
+}
+
+.admin-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.admin-section-header h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+}
+
+.admin-section-header p {
+    margin: 4px 0 0;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+.admin-grid {
+    margin-top: 4px;
+}
+
+.admin-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 16px;
+    padding: 26px 26px 22px;
+    box-shadow: 0 2px 10px rgba(31, 89, 54, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 28px rgba(31, 89, 54, 0.12);
+    border-color: var(--verde-principal);
+}
+
+.admin-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.admin-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background-color: var(--verde-claro);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.admin-card-number {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--gris-borde);
+    letter-spacing: 0.05em;
+}
+
+.admin-card-content {
+    flex: 1;
+}
+
+.admin-card-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-bottom: 8px;
+}
+
+.admin-card-content p {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.admin-card-footer {
+    margin-top: 20px;
+}
+
+.admin-card-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: gap 0.2s ease;
+}
+
+.admin-card-button:hover {
+    gap: 12px;
+    color: var(--blanco);
+}
+
+/* Acentos sutiles para distinguir algunos módulos, sin cambiar el
+   esquema de color general del sitio */
+.admin-card-prioridad {
+    border-top: 4px solid var(--verde-principal);
+}
+
+.admin-card-produccion {
+    border-top: 4px solid #8a6d3b;
+}
+
+@media (max-width: 767px) {
+    .admin-header {
+        align-items: flex-start;
+    }
+}
+
+/* ---------- Tablas y tarjetas de listados (Usuarios, Productos, Ventas) ---------- */
+.fs-7 {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+}
+
+#tablaUsuarios thead th,
+#tablaVentas thead th {
+    color: var(--texto-secundario);
+    font-weight: 700;
+    border-bottom-width: 1px;
+}
+
+#tablaUsuarios tbody tr:hover,
+#tablaVentas tbody tr:hover {
+    background-color: var(--verde-claro);
+}
+
+.badge {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+
+.card.shadow-sm {
+    box-shadow: 0 6px 18px rgba(31, 89, 54, 0.06) !important;
+}
+
+.admin-dashboard .container > .admin-header,
+.glass-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f4f9f6 100%);
+    border: 1px solid rgba(47, 122, 77, 0.12);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px -5px rgba(31, 89, 54, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-dashboard .container > .admin-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--verde-principal);
+}
+
+/* Tarjeta contenedora de la tabla con sombras modernas */
+.card.border-0.shadow-sm,
+.admin-dashboard .card {
+    border: 1px solid rgba(47, 122, 77, 0.1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 32px rgba(31, 89, 54, 0.07) !important;
+    overflow: hidden;
+    background-color: var(--blanco);
+}
+
+/* Encabezado de la tabla con un toque de color elegante */
+#tablaUsuarios thead {
+    background-color: var(--verde-claro);
+    border-bottom: 2px solid var(--verde-principal);
+}
+
+#tablaUsuarios thead th {
+    color: var(--verde-oscuro) !important;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+/* Filas de la tabla con separación visual y efecto hover vibrante */
+#tablaUsuarios tbody tr {
+    transition: all 0.25s ease-in-out;
+    border-bottom: 1px solid #edf2ef;
+}
+
+#tablaUsuarios tbody tr:hover {
+    background-color: #eaf5ec !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(47, 122, 77, 0.08);
+}
+
+/* Botones con estilo Sólido / Relleno (Más vida y presencia visual) */
+.btn-outline-primary {
+    background-color: #eef5ff;
+    border-color: #b3d7ff;
+    color: #0d6efd;
+    font-weight: 600;
+}
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+.btn-outline-danger {
+    background-color: #fdf2f2;
+    border-color: #f5c6cb;
+    color: #dc3545;
+    font-weight: 600;
+}
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.25);
+}
+
+.btn-outline-success {
+    background-color: var(--verde-claro);
+    border-color: #a3d9b8;
+    color: var(--verde-oscuro);
+    font-weight: 600;
+}
+.btn-outline-success:hover {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(47, 122, 77, 0.25);
+}
+
+/* Botón principal "+ Nuevo Usuario" con brillo o efecto destacado */
+.btn-punto-primario {
+    box-shadow: 0 4px 15px rgba(47, 122, 77, 0.3);
+    transition: all 0.3s ease;
+}
+.btn-punto-primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(47, 122, 77, 0.45);
+}
+
+/* Botón "Volver al panel" mejorado */
+.btn-volver-admin {
+    background-color: var(--blanco);
+    border: 2px solid var(--verde-principal);
+    color: var(--verde-principal);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(47, 122, 77, 0.08);
+}
+.btn-volver-admin:hover {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    transform: translateX(-3px);
+    box-shadow: 0 4px 12px rgba(47, 122, 77, 0.2);
+}
+
+/* Badges de Estado y Roles con más presencia */
+.badge.bg-success {
+    background-color: #198754 !important;
+    padding: 6px 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    box-shadow: 0 2px 6px rgba(25, 135, 84, 0.2);
+}
+
+.badge.bg-secondary {
+    background-color: #6c757d !important;
+    padding: 6px 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}                       

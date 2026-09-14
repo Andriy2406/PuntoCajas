@@ -1,0 +1,571 @@
+/* =========================================================
+   PUNTO CAJAS - MIS COTIZACIONES
+========================================================= */
+
+.mis-cotizaciones-page {
+    background: #f4f6f5;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.mis-cotizaciones-header h1 {
+    font-weight: 700;
+    color: var(--verde-oscuro);
+}
+
+
+/* =========================================================
+   CONTROLES DE BÚSQUEDA Y FILTRO
+========================================================= */
+
+.cotizaciones-controles {
+    background: #ffffff;
+    border: 1px solid var(--gris-borde) !important;
+    border-radius: 12px !important;
+}
+
+
+.cotizaciones-controles .form-label {
+    color: var(--texto-principal);
+    margin-bottom: .45rem;
+}
+
+
+.cotizaciones-controles .input-group-text {
+    background: #ffffff;
+    border-color: var(--gris-borde);
+}
+
+
+.cotizaciones-controles .form-control,
+.cotizaciones-controles .form-select {
+    border-color: var(--gris-borde);
+}
+
+
+.cotizaciones-controles .form-control:focus,
+.cotizaciones-controles .form-select:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 .2rem rgba(47, 122, 77, .15);
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+========================================================= */
+
+.cotizacion-card {
+    background: #ffffff;
+    border: 1px solid var(--gris-borde) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+
+    transition:
+        box-shadow .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+.cotizacion-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .07) !important;
+}
+
+
+.cotizacion-card.seleccionada {
+    border: 2px solid var(--verde-principal) !important;
+
+    box-shadow:
+        0 8px 26px rgba(47, 122, 77, .12) !important;
+}
+
+
+/* =========================================================
+   RESUMEN COMPACTO DE LA COTIZACIÓN
+========================================================= */
+
+.cotizacion-resumen {
+    padding: 1.15rem 1.35rem;
+    background: #ffffff;
+}
+
+
+.cotizacion-resumen:hover {
+    background: #fcfdfc;
+}
+
+
+/* =========================================================
+   ICONO
+========================================================= */
+
+.cotizacion-icono {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--verde-claro);
+
+    border: 1px solid #cfe5d7;
+
+    border-radius: 10px;
+
+    font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   DATOS RESUMIDOS
+========================================================= */
+
+.cotizacion-card .dato-label {
+    font-size: .72rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .035em;
+
+    color: var(--texto-secundario);
+
+    font-weight: 600;
+
+    margin-bottom: .15rem;
+}
+
+
+.cotizacion-card .dato-valor {
+    color: var(--texto-principal);
+
+    margin-top: .1rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ESTADO
+========================================================= */
+
+.cotizacion-card .estado-badge {
+    font-weight: 600;
+
+    font-size: .78rem;
+
+    padding: .45rem .7rem;
+}
+
+
+/* =========================================================
+   BOTÓN VER DETALLES
+========================================================= */
+
+.btn-ver-detalles {
+    min-width: 135px;
+
+    font-weight: 600;
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+}
+
+
+.btn-ver-detalles:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+
+
+.indicador-detalles {
+    display: inline-block;
+
+    font-size: .7rem;
+
+    transition: transform .2s ease;
+}
+
+
+/* =========================================================
+   ÁREA DE DETALLES
+========================================================= */
+
+.cotizacion-card .card-body {
+    padding: 1.5rem;
+}
+
+
+.cotizacion-card .collapse {
+    border-top: 0;
+}
+
+
+.cotizacion-card hr {
+    border-color: var(--gris-borde);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   FORMULARIOS
+========================================================= */
+
+.cotizacion-card .form-control,
+.cotizacion-card .form-select,
+.cotizacion-card textarea {
+    border-color: var(--gris-borde);
+}
+
+
+.cotizacion-card .form-control:focus,
+.cotizacion-card .form-select:focus,
+.cotizacion-card textarea:focus {
+    border-color: var(--verde-principal);
+
+    box-shadow:
+        0 0 0 .2rem rgba(47, 122, 77, .15);
+}
+
+
+/* =========================================================
+   FORMULARIO DE CORRECCIÓN
+========================================================= */
+
+.cotizacion-card form.bg-light {
+    background: #f8f9fa !important;
+
+    border-color: var(--gris-borde) !important;
+}
+
+
+.cotizacion-card form.bg-light h3 {
+    color: var(--verde-oscuro);
+}
+
+
+/* =========================================================
+   RESUMEN COMERCIAL
+========================================================= */
+
+.cotizacion-card .resumen-comercial {
+    background: var(--verde-claro);
+
+    border: 1px solid #cfe5d7;
+
+    border-radius: 10px;
+
+    padding: 1rem;
+}
+
+
+.cotizacion-card .resumen-comercial .total {
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+    color: var(--verde-oscuro);
+}
+
+
+.cotizacion-card .resumen-comercial .anticipo {
+    font-weight: 700;
+
+    color: var(--verde-principal);
+}
+
+
+/* =========================================================
+   ALERTAS
+========================================================= */
+
+.cotizacion-card .alert {
+    border-radius: 10px;
+}
+
+
+.cotizacion-card .alert strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   IMAGEN DE ACABADO
+========================================================= */
+
+.imagen-acabado {
+    display: block;
+
+    max-width: 250px;
+
+    max-height: 180px;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    background: #ffffff;
+
+    padding: .25rem;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.cotizacion-card .btn {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MODALES
+========================================================= */
+
+.cotizacion-card .modal-content {
+    border: 0;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+.cotizacion-card .modal-header {
+    border-bottom-color: var(--gris-borde);
+}
+
+
+.cotizacion-card .modal-footer {
+    border-top-color: var(--gris-borde);
+}
+
+
+/* =========================================================
+   MENSAJE SIN RESULTADOS
+========================================================= */
+
+#sinResultadosMisCotizaciones {
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   MIS PEDIDOS
+========================================================= */
+
+.tarjeta-pedido-historial {
+    background: #ffffff;
+
+    border: 1px solid var(--gris-borde);
+
+    border-radius: 12px;
+
+    padding: 1.25rem;
+
+    margin-bottom: 1rem;
+
+    transition:
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+
+.tarjeta-pedido-historial:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .06);
+
+    transform: translateY(-1px);
+}
+
+
+.tarjeta-pedido-historial h3 {
+    color: var(--texto-principal);
+
+    font-weight: 700;
+}
+
+
+.paso-seguimiento {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: .4rem .7rem;
+
+    border-radius: 999px;
+
+    background: #eef1ef;
+
+    color: var(--texto-secundario);
+
+    font-size: .78rem;
+
+    font-weight: 600;
+}
+
+
+.paso-seguimiento.paso-actual {
+    background: var(--verde-claro);
+
+    color: var(--verde-oscuro);
+
+    border: 1px solid #cfe5d7;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .cotizacion-resumen {
+        padding: 1rem;
+    }
+
+
+    .btn-ver-detalles {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MÓVIL
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .mis-cotizaciones-page {
+        padding-top: 1.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+
+    .cotizacion-resumen {
+        padding: 1rem;
+    }
+
+
+    .cotizacion-card .card-body {
+        padding: 1rem;
+    }
+
+
+    .cotizacion-icono {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+
+    .cotizacion-resumen .row {
+        row-gap: .85rem !important;
+    }
+
+
+    .cotizacion-resumen .col-lg-3,
+    .cotizacion-resumen .col-lg-2,
+    .cotizacion-resumen .col-md-4,
+    .cotizacion-resumen .col-md-3,
+    .cotizacion-resumen .col-md-2 {
+        width: 50%;
+    }
+
+
+    .cotizacion-resumen .col-lg-3:first-child {
+        width: 100%;
+    }
+
+
+    .cotizacion-resumen .col-lg-3:last-child {
+        width: 100%;
+    }
+
+
+    .btn-ver-detalles {
+        width: 100%;
+    }
+
+
+    .cotizacion-card .d-flex.gap-2 {
+        flex-direction: column;
+    }
+
+
+    .cotizacion-card .d-flex.gap-2 form,
+    .cotizacion-card .d-flex.gap-2 .btn {
+        width: 100%;
+    }
+
+
+    .cotizacion-card .d-flex.gap-2 form .btn {
+        width: 100%;
+    }
+
+
+    .imagen-acabado {
+        max-width: 100%;
+
+        max-height: 220px;
+    }
+
+
+    .cotizaciones-controles .card-body {
+        padding: 1rem;
+    }
+
+
+    .tarjeta-pedido-historial {
+        padding: 1rem;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MÓVIL PEQUEÑO
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .cotizacion-resumen .col-lg-2,
+    .cotizacion-resumen .col-md-3,
+    .cotizacion-resumen .col-md-2 {
+        width: 100%;
+    }
+
+
+    .cotizacion-resumen .col-lg-3 {
+        width: 100%;
+    }
+
+
+    .cotizacion-card .estado-badge {
+        display: inline-block;
+    }
+
+
+    .cotizaciones-controles .d-flex {
+        align-items: flex-start !important;
+    }
+
+
+    #limpiarFiltrosMisCotizaciones {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,412 @@
+:root {
+    --verde-principal: #2f7a4d;
+    --verde-oscuro: #1f5936;
+    --verde-claro: #e7f4ec;
+    --blanco: #ffffff;
+    --gris-claro: #f4f6f5;
+    --gris-borde: #dde3e0;
+    --texto-principal: #24312b;
+    --texto-secundario: #5b6b63;
+    --fuente-titulos: "Poppins", sans-serif;
+    --fuente-texto: "Poppins", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+    color: var(--texto-principal);
+    background-color: var(--gris-claro);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+}
+
+h1 {
+    color: var(--verde-oscuro);
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+h2 {
+    color: var(--verde-oscuro);
+    font-size: 1.1rem;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+a {
+    color: var(--verde-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--verde-oscuro);
+}
+
+.navbar-punto {
+    background-color: var(--blanco);
+    border-bottom: 3px solid var(--verde-principal);
+}
+
+.navbar-punto .navbar-brand {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Enlaces de la barra de navegación en negrita globalmente */
+.navbar-punto .nav-link {
+    font-weight: 600 !important;
+}
+
+.logo-caja {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.contenedor-formulario {
+    max-width: 720px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 36px;
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.contenedor-formulario .subtitulo {
+    color: var(--texto-secundario);
+    margin-bottom: 28px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--texto-principal);
+    margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--texto-principal);
+    background-color: var(--blanco);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: #89958f;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 0.2rem rgba(47, 122, 77, 0.2);
+    outline: none;
+}
+
+.form-control:valid:focus,
+.form-select:valid:focus {
+    border-color: var(--verde-principal);
+}
+
+.contenedor-password {
+    position: relative;
+    width: 100%;
+}
+
+.contenedor-password .form-control {
+    padding-right: 50px;
+}
+
+.boton-mostrar-clave {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--texto-secundario);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-mostrar-clave:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.boton-mostrar-clave:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.boton-mostrar-clave:focus {
+    outline: none;
+}
+
+.boton-mostrar-clave:focus-visible {
+    outline: 2px solid var(--verde-principal);
+    outline-offset: 2px;
+}
+
+.icono-ojo {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.boton-mostrar-clave.mostrando .icono-ojo {
+    transform: scale(1.08);
+}
+
+.form-check-input {
+    border-color: var(--gris-borde);
+}
+
+.form-check-input:checked {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+}
+
+.form-check-input:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 0.2rem rgba(47, 122, 77, 0.2);
+}
+
+.form-check-label {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+.form-text {
+    color: var(--texto-secundario);
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.btn-punto-primario {
+    background-color: var(--verde-principal);
+    border: 2px solid var(--verde-principal);
+    color: var(--blanco);
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-punto-primario:hover {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+    color: var(--blanco);
+    transform: translateY(-1px);
+}
+
+.btn-punto-secundario {
+    background-color: transparent;
+    border: 2px solid var(--verde-principal);
+    color: var(--verde-principal);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-punto-secundario:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+}
+
+.alert {
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.alert-success {
+    background-color: var(--verde-claro);
+    border: 1px solid #b9ddc5;
+    color: var(--verde-oscuro);
+}
+
+.alert-danger {
+    background-color: #fbecec;
+    border: 1px solid #e8caca;
+    color: #842029;
+}
+
+/* Pie de página institucional unificado y limpio */
+.footer-punto {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 24px 0;
+    margin-top: auto;
+}
+
+.footer-punto span {
+    font-size: 0.9rem;
+}
+
+.footer-punto a,  
+.footer-punto a:visited {
+    color: #ffffff !important;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.footer-punto a:hover {
+    color: #ffffff !important;
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Enlaces dentro de etiquetas o formularios (como política de privacidad) */
+.form-check-label a {
+    color: var(--verde-principal);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.form-check-label a:hover {
+    color: var(--verde-oscuro);
+}
+
+/* Corrección de tamaño compacto y color para botones secundarios en la barra superior */
+.navbar-punto .btn {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    border-radius: 0.375rem !important;
+}
+
+.navbar-punto a.btn-punto-secundario {
+    color: var(--verde-principal) !important;
+    background-color: transparent !important;
+}
+
+.navbar-punto a.btn-punto-secundario:hover {
+    color: var(--verde-oscuro) !important;
+    background-color: var(--verde-claro) !important;
+}
+
+@media (max-width: 768px) {
+    .contenedor-formulario {
+        margin: 30px auto;
+        padding: 28px;
+        width: calc(100% - 30px);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contenedor-formulario {
+        margin: 20px auto;
+        padding: 22px;
+        width: calc(100% - 20px);
+        border-radius: 8px;
+    }
+
+    .contenedor-formulario h1 {
+        font-size: 1.4rem;
+    }
+
+    .contenedor-formulario .subtitulo {
+        font-size: 0.9rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .form-control,
+    .form-select {
+        padding: 9px 10px;
+    }
+
+    .form-check-label {
+        font-size: 0.85rem;
+    }
+
+    .boton-mostrar-clave {
+        width: 38px;
+        height: 38px;
+        right: 6px;
+    }
+
+    .contenedor-password .form-control {
+        padding-right: 48px;
+    }
+}
+/* Medidor de fortaleza de contraseña */
+.barra-fortaleza-clave {
+    width: 100%;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.barra-fortaleza-relleno {
+    height: 100%;
+    width: 0%;
+    background: #dee2e6;
+    transition: width .25s ease, background .25s ease;
+    border-radius: 999px;
+}
+.texto-ayuda-clave {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 4px;
+}
+.texto-clave-debil { color: #dc3545; }
+.texto-clave-media { color: #fd7e14; }
+.texto-clave-fuerte { color: #198754; }

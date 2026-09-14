@@ -1,0 +1,248 @@
+.seccion-produccion {
+    padding: 50px 0 70px;
+    background-color: #f4f6f5;
+    min-height: calc(100vh - 150px);
+}
+
+.encabezado-produccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.encabezado-produccion h1 {
+    margin: 6px 0 8px;
+    color: #24312b;
+    font-weight: 700;
+}
+
+.encabezado-produccion p {
+    margin: 0;
+    color: #5b6b63;
+}
+
+.texto-superior {
+    display: inline-block;
+    color: #2f7a4d;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tarjeta-produccion {
+    background-color: #ffffff;
+    border: 1px solid #dde3e0;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(36, 49, 43, 0.06);
+    overflow: hidden;
+}
+
+.tarjeta-produccion-cuerpo {
+    padding: 28px;
+}
+
+.subtitulo-seccion {
+    color: #24312b;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.titulo-orden {
+    color: #1f5936;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.dato-label {
+    display: block;
+    color: #5b6b63;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.dato-valor {
+    color: #24312b;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.bloque-formulario {
+    padding: 25px 0;
+    border-bottom: 1px solid #dde3e0;
+}
+
+.bloque-formulario:last-of-type {
+    border-bottom: none;
+}
+
+.bloque-formulario h3 {
+    color: #24312b;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.form-label {
+    color: #24312b;
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #dde3e0;
+    border-radius: 9px;
+    padding: 10px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #2f7a4d;
+    box-shadow: 0 0 0 0.2rem rgba(47, 122, 77, 0.15);
+}
+
+.tabla-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-produccion {
+    margin: 0;
+    min-width: 850px;
+}
+
+.tabla-produccion thead th {
+    background-color: #e7f4ec;
+    color: #1f5936;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-bottom: 1px solid #dde3e0;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.tabla-produccion tbody td {
+    color: #24312b;
+    border-bottom: 1px solid #edf0ee;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.tabla-produccion tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-produccion tbody tr:hover {
+    background-color: #f8faf9;
+}
+
+.turno-produccion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #e7f4ec;
+    color: #1f5936;
+    font-weight: 700;
+}
+
+.sin-turno {
+    color: #9aa49f;
+    font-size: 1.2rem;
+}
+
+.texto-muted {
+    color: #8a9690;
+}
+
+.estado-produccion {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.estado-PENDIENTE {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.estado-EN_PRODUCCION {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+.estado-FINALIZADA {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.icono-produccion {
+    font-size: 3rem;
+}
+
+.btn-punto-primario {
+    background-color: #2f7a4d;
+    border-color: #2f7a4d;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-punto-primario:hover,
+.btn-punto-primario:focus {
+    background-color: #1f5936;
+    border-color: #1f5936;
+    color: #ffffff;
+}
+
+.btn-punto-secundario {
+    background-color: #ffffff;
+    border: 1px solid #2f7a4d;
+    color: #2f7a4d;
+    font-weight: 600;
+}
+
+.btn-punto-secundario:hover,
+.btn-punto-secundario:focus {
+    background-color: #e7f4ec;
+    border-color: #2f7a4d;
+    color: #1f5936;
+}
+
+@media (max-width: 767px) {
+
+    .seccion-produccion {
+        padding: 35px 0 50px;
+    }
+
+    .encabezado-produccion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .encabezado-produccion .btn {
+        width: 100%;
+    }
+
+    .tarjeta-produccion-cuerpo {
+        padding: 20px;
+    }
+
+    .titulo-orden {
+        font-size: 1.3rem;
+    }
+
+    .tabla-produccion {
+        min-width: 800px;
+    }
+
+}

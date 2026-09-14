@@ -1,0 +1,308 @@
+.pago-mercado-pago {
+    min-height: 58vh;
+    background-color: var(--gris-claro);
+}
+
+.contenedor-pago {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   TARJETA DE PAGO
+   --------------------------------------------------------- */
+
+.pago-mercado-pago .card {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(36, 49, 43, 0.08) !important;
+}
+
+
+/* ---------------------------------------------------------
+   ICONO PRINCIPAL
+   --------------------------------------------------------- */
+
+.icono-pago {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+}
+
+.icono-pago svg {
+    width: 38px;
+    height: 38px;
+}
+
+
+/* ---------------------------------------------------------
+   SPINNER
+   --------------------------------------------------------- */
+
+.spinner-pago {
+    width: 3rem;
+    height: 3rem;
+
+    border-width: 0.3rem;
+
+    color: var(--verde-principal);
+}
+
+
+/* ---------------------------------------------------------
+   TEXTOS
+   --------------------------------------------------------- */
+
+.texto-pago {
+    margin-bottom: 0.75rem;
+
+    color: var(--verde-oscuro);
+    font-family: var(--fuente-titulos);
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.texto-pago-secundario {
+    max-width: 560px;
+    margin: 0 auto;
+
+    color: var(--texto-secundario);
+    font-family: var(--fuente-texto);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   AVISO DE SEGURIDAD
+   --------------------------------------------------------- */
+
+.aviso-seguridad {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    max-width: 570px;
+    margin: 1.75rem auto 0;
+    padding: 1rem 1.15rem;
+
+    background-color: var(--verde-claro);
+    border: 1px solid var(--gris-borde);
+    border-radius: 12px;
+
+    color: var(--texto-secundario);
+    font-family: var(--fuente-texto);
+    font-size: 0.88rem;
+    line-height: 1.55;
+
+    text-align: left;
+}
+
+.aviso-seguridad svg {
+    flex: 0 0 auto;
+
+    width: 20px;
+    height: 20px;
+
+    margin-top: 1px;
+
+    color: var(--verde-principal);
+}
+
+.aviso-seguridad strong {
+    color: var(--verde-oscuro);
+    font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------
+   BOTÓN CONTINUAR
+   --------------------------------------------------------- */
+
+.pago-mercado-pago .btn-punto-primario {
+    min-width: 190px;
+
+    margin-top: 1.5rem;
+
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.pago-mercado-pago .btn-punto-primario:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 16px rgba(47, 122, 77, 0.18);
+}
+
+.pago-mercado-pago .btn-punto-primario:active {
+    transform: translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   ENLACE VOLVER
+   --------------------------------------------------------- */
+
+.pago-mercado-pago .btn-punto-secundario {
+    margin-top: 0.75rem;
+
+    font-family: var(--fuente-texto);
+    font-weight: 500;
+
+    border-radius: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.hero-punto h1 {
+    color: var(--verde-oscuro);
+    font-family: var(--fuente-titulos);
+}
+
+.hero-punto p {
+    font-family: var(--fuente-texto);
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE - TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .pago-mercado-pago {
+        min-height: 55vh;
+    }
+
+    .contenedor-pago {
+        max-width: 95%;
+    }
+
+    .pago-mercado-pago .card {
+        padding: 2.5rem !important;
+        border-radius: 16px;
+    }
+
+    .icono-pago {
+        width: 68px;
+        height: 68px;
+    }
+
+    .icono-pago svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .texto-pago {
+        font-size: 1.45rem;
+    }
+
+    .texto-pago-secundario {
+        font-size: 0.94rem;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE - CELULAR
+   --------------------------------------------------------- */
+
+@media (max-width: 576px) {
+
+    .pago-mercado-pago {
+        min-height: 52vh;
+    }
+
+    .contenedor-pago {
+        max-width: 100%;
+    }
+
+    .pago-mercado-pago .card {
+        padding: 2rem 1.25rem !important;
+        border-radius: 14px;
+    }
+
+    .icono-pago {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 1.25rem;
+    }
+
+    .icono-pago svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .spinner-pago {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .texto-pago {
+        font-size: 1.3rem;
+    }
+
+    .texto-pago-secundario {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .aviso-seguridad {
+        padding: 0.9rem;
+
+        font-size: 0.82rem;
+    }
+
+    .pago-mercado-pago .btn-punto-primario {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   ACCESIBILIDAD
+   --------------------------------------------------------- */
+
+.pago-mercado-pago .btn:focus-visible {
+    outline: 3px solid rgba(47, 122, 77, 0.25);
+    outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   RESPETO A REDUCCIÓN DE MOVIMIENTO
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pago-mercado-pago .btn-punto-primario {
+        transition: none;
+    }
+
+    .pago-mercado-pago .btn-punto-primario:hover {
+        transform: none;
+    }
+}

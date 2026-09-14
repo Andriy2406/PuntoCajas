@@ -1,0 +1,109 @@
+.seccion-soporte-acceso {
+    background-color: var(--gris-claro);
+    min-height: calc(100vh - 150px);
+    padding: 56px 0;
+}
+
+.fila-soporte-acceso {
+    display: flex;
+    justify-content: center;
+}
+
+.soporte-acceso-card {
+    width: 100%;
+    max-width: 680px;
+}
+
+.soporte-acceso-encabezado {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.soporte-acceso-encabezado h1 {
+    color: var(--verde-oscuro);
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+}
+
+.soporte-acceso-encabezado .subtitulo {
+    color: var(--texto-secundario);
+    margin-bottom: 0;
+}
+
+.icono-soporte-acceso {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--verde-principal);
+    border-radius: 50%;
+
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.soporte-acceso-card .form-label {
+    font-weight: 500;
+    color: var(--texto-principal);
+}
+
+.soporte-acceso-card .form-control {
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    padding: 11px 13px;
+}
+
+.soporte-acceso-card .form-control:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 0.2rem rgba(47, 122, 77, 0.25);
+}
+
+.soporte-acceso-card textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+.soporte-acceso-card .form-text {
+    color: var(--texto-secundario);
+    font-size: 0.82rem;
+    margin-top: 6px;
+}
+
+.botones-soporte-acceso {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.soporte-acceso-card .alert {
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 576px) {
+
+    .seccion-soporte-acceso {
+        padding: 32px 16px;
+    }
+
+    .soporte-acceso-card {
+        padding: 24px;
+    }
+
+    .botones-soporte-acceso {
+        flex-direction: column-reverse;
+    }
+
+    .botones-soporte-acceso .btn {
+        width: 100%;
+    }
+}
