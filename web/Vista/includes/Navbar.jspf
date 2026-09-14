@@ -1,31 +1,61 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<nav class="navbar navbar-expand-lg navbar-punto py-2">
-    <div class="container-fluid px-3">
-        <a class="navbar-brand fw-bold" href="${pageContext.request.contextPath}/InicioServlet">Punto Cajas</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar men&uacute;">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<nav class="navbar navbar-expand-md navbar-punto py-3 shadow-sm">
+    <div class="container">
+        <!-- Logo y marca -->
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="${pageContext.request.contextPath}/Vista/index.jsp">
+            <i class="bi bi-box-seam me-2 fs-4 text-primary"></i>
+            <span>Punto Cajas</span>
+        </a>
+
+        <!-- Botón responsive para dispositivos móviles -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="menuPrincipal">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-1 gap-lg-2">
-                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/InicioServlet">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/CatalogoServlet">Cat&aacute;logo</a></li>
-                <li class="nav-item"><a class="nav-link ${pageContext.request.servletPath == '/CotizacionServlet' ? 'active' : ''}" href="${pageContext.request.contextPath}/CotizacionServlet">Cotizar</a></li>
-                <c:if test="${not empty sessionScope.usuarioActivo}">
-                    <li class="nav-item"><a class="nav-link ${pageContext.request.servletPath == '/MisCotizacionesServlet' ? 'active' : ''}" href="${pageContext.request.contextPath}/MisCotizacionesServlet">Mis cotizaciones</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Vista/Soporte.jsp">Soporte</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/CarritoServlet">Carrito</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/PerfilServlet">Mi perfil</a></li>
-                    <c:if test="${sessionScope.usuarioActivo.idRol == 1 || sessionScope.usuarioActivo.idRol == 3}">
-                        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/GestionarCotizacionesServlet">Gestionar cotizaciones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/AdminServlet">Administraci&oacute;n</a></li>
-                    </c:if>
-                    <li class="nav-item ms-lg-2 text-secondary small"><span class="nav-link px-0">Hola, <strong>${sessionScope.usuarioActivo.nombre}</strong></span></li>
-                    <li class="nav-item ms-lg-1"><a class="btn btn-punto-secundario btn-sm" href="${pageContext.request.contextPath}/LogoutServlet">Cerrar sesi&oacute;n</a></li>
-                </c:if>
-                <c:if test="${empty sessionScope.usuarioActivo}">
-                    <li class="nav-item"><a class="btn btn-punto-primario btn-sm" href="${pageContext.request.contextPath}/Vista/Login.jsp">Iniciar sesi&oacute;n</a></li>
-                    <li class="nav-item"><a class="btn btn-punto-secundario btn-sm" href="${pageContext.request.contextPath}/Vista/Registro.jsp">Registrarse</a></li>
-                </c:if>
+
+        <!-- Enlaces de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/Vista/index.jsp">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/Vista/cotizar.jsp">Cotizar</a>
+                </li>
+                
+                <!-- Opciones según el estado de la sesión -->
+                <c:choose>
+                    <c:when test="${not empty sessionScope.usuarioActivo}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/Vista/MisCotizaciones.jsp">Mis Cotizaciones</a>
+                        </li>
+                        
+                        <c:if test="${sessionScope.usuarioActivo.rol == 'Administrador'}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="${pageContext.request.contextPath}/Vista/GestionarCotizaciones.jsp">Gestionar</a>
+                            </li>
+                        </c:if>
+
+                        <li class="nav-item dropdown ms-md-3">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> ${sessionScope.usuarioActivo.nombre}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/Vista/perfil.jsp">Mi Perfil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="${pageContext.request.contextPath}/CerrarSesionServlet">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="nav-item ms-md-2">
+                            <a class="btn btn-outline-primary btn-sm px-3 me-2" href="${pageContext.request.contextPath}/Vista/login.jsp">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary btn-sm px-3" href="${pageContext.request.contextPath}/Vista/registro.jsp">Registrarse</a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </div>
     </div>
